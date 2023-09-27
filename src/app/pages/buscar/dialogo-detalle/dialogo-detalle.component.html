@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+  
+    <h2 class="mat-h2">Paciente: {{consulta.paciente.nombres}} | Fecha de Consulta: {{consulta.fecha | date:'dd-MM-yyyy'}}</h2>
+
+    <!-- Diagnostico y Tratamiento -->
+    <mat-card class="example-card" *ngFor="let d of consulta.detalleConsulta">
+        <mat-card-header>
+            <mat-card-title>DIAGNOSTICO</mat-card-title>
+            <mat-card-subtitle>{{d.diagnostico}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-header>
+            <mat-card-title>TRATAMIENTO</mat-card-title>
+            <mat-card-subtitle>{{d.tratamiento}}</mat-card-subtitle>
+        </mat-card-header>
+
+
+    </mat-card>
+
+    <!-- Iteración sobre examenes (donde cada elemento es un ConsultaListaExamenDTO) -->
+    <!-- Examenes -->
+    <mat-card class="example-card" *ngFor="let examen of examenes">
+        <mat-card-header>
+          <mat-card-title>Nombre del examen:</mat-card-title>
+          <mat-card-subtitle>{{examen.nombre}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-header>
+          <mat-card-title>Descripción del examen:</mat-card-title>
+          <mat-card-subtitle>{{examen.descripcion}}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+
+
+    <button mat-raised-button color="accent" (click)="cancelar()" style="float: right">Cerrar</button>
+</div>

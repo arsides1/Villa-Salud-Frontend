@@ -1,0 +1,18 @@
+.chart-container {
+    width: 70%;      
+    height: 70vh;     
+    margin: 0 auto;   
+    
+  }
+  
+ 
+  .chart-containers {
+    width: 70%;      
+    height: 70vh;     
+    margin: 0 auto;   
+    
+  }
+  
+  body {
+    overflow: hidden;
+  }

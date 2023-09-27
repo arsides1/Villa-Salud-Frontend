@@ -1,0 +1,28 @@
+<mat-toolbar>Reporte de consultas</mat-toolbar>
+<div class="main-content">
+    <div class="chart-container" [hidden]="!chart">
+
+        <button mat-button color="primary" (click)="cambiar('line')">Lineal</button>
+        <button mat-button color="primary" (click)="cambiar('bar')">Barras</button>
+        <button mat-button color="primary" (click)="cambiar('doughnut')">Rosquilla</button>
+        <button mat-button color="primary" (click)="cambiar('radar')">Radar</button>
+        <button mat-button color="primary" (click)="cambiar('pie')">Pie</button>
+
+        <canvas id="canvas">{{ chart }}</canvas>
+
+        <button mat-button color="primary" (click)="generarReporte()">VER CONSULTAS PDF</button>
+        <button mat-button color="primary" (click)="descargarReporte()">Descargar CONSULTAS PDF</button>
+       
+
+     
+        <button mat-button color="primary" (click)="pdfgrafico()">DESCARGAR GRAFICO PDF</button>
+        
+        <div class="chart-containers" [hidden]="!chart">
+
+            <pdf-viewer [src]="pdfSrc" [render-text]="true" [original-size]="false"
+                style="width: 1000px; height: 1450px">
+            </pdf-viewer>
+
+        </div>
+    </div>
+</div>

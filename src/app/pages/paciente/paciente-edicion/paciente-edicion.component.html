@@ -1,0 +1,44 @@
+
+<mat-toolbar>INGRESE LOS DATOS DEL PACIENTE</mat-toolbar>
+<form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmPaciente="ngForm">
+
+    <div [hidden]="true">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="ID" required formControlName="id">
+      </mat-form-field>
+    </div>
+  
+    <mat-form-field class="example-full-width"> 
+      <mat-label >Nombres</mat-label>
+      <input matInput   required formControlName="nombres">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label >Apellidos</mat-label>
+      <input matInput  required formControlName="apellidos">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label >DNI</mat-label>
+      <input matInput  required formControlName="dni" type="number">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label >Dirección</mat-label>
+      <input matInput  required formControlName="direccion">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label >Teléfono</mat-label>
+      <input matInput  required formControlName="telefono" type="number" >
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmPaciente.invalid">
+      <mat-icon>done</mat-icon>
+      <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/paciente' type="button">
+      <mat-icon>close</mat-icon>
+      <span>Cancelar</span>
+    </button>
+  </form>
